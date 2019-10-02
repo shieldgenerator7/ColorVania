@@ -24,6 +24,13 @@ public class PlayerController : MonoBehaviour
     {
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
+        if (vertical == 0)
+        {
+            if (Input.GetButton("Jump"))
+            {
+                vertical = 1;
+            }
+        }
         Vector2 velocity = rb2d.velocity;
         if (horizontal != 0)
         {
